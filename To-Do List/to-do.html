@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!-- Coding by CodingLab | www.codinglabweb.com-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic Todo List Application</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Unicons CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
+  </head>
+  <body>
+    <header>
+      <a href="/main.html" class="logo"><span>T</span>ravel</a>
+      
+      <nav>
+        <ul>
+            <a href="/main.html" >Home</a>
+          <a href="/main.html">Destinations</a>
+          <a href="/main.html">Book</a>
+          <a href="/weather/weather.html">Weather</a>
+          <a href="/Language Translator/lang.html">Translator</a>
+          <a href="/Expense/expense.html">Expense Tracker</a>
+          <a href="to-do.html" class="active">To-Do List</a>
+          <a href="/main.html">Contact</a>
+        </ul>
+    </nav>
+  </header>
+
+  <section>
+    <div class="container">
+      <div class="input-field">
+        <textarea placeholder="Enter your new todo"></textarea>
+        <i class="uil uil-notes note-icon"></i>
+      </div>
+
+      <ul class="todoLists"></ul>
+
+      <div class="pending-tasks">
+        <span
+          >You have <span class="pending-num"> no </span> tasks pending.</span
+        >
+        <button class="clear-button">Clear All</button>
+      </div>
+    </div>
+  </section>
+
+    <!-- JavaScript -->
+    <script src="/To-Do List/script.js"></script>
+  </body>
+</html>
