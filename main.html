@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Companion</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <header>
+        <a href="/main.html" class="logo"><span>T</span>ravel</a>
+        
+        <nav>
+          <ul>
+              <a href="#home" class="active">Home</a>
+            <a href="#popular-destinations">Destinations</a>
+            <a href="#booking">Book</a>
+            <a href="/weather/weather.html">Weather</a>
+            <a href="/Language Translator/lang.html">Translator</a>
+            <a href="/Expense/expense.html">Expense Tracker</a>
+            <a href="/To-Do List/to-do.html">To-Do List</a>
+            <a href="#contact-about">Contact</a>
+            
+          </ul>
+      </nav>
+    </header>
+
+    <section class="home" id="home">
+        <video class="video-slide active" src="1.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="2.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="3.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="4.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="5.mp4" autoplay muted loop></video>
+        <div class="content active">
+            <h1>Wonderful<br><span>Island</span></h1>
+            <p><h3>Welcome to Wonderful Islands, your gateway to paradise! Explore a world of enchanting islands, each with its own unique charm and beauty. From secluded tropical havens to vibrant cultural hotspots, let us guide you to the perfect island getaway. Discover pristine beaches, crystal-clear waters, and unforgettable adventures. Your dream island escape starts here! </h3></p>
+            <a href="">Read More</a>
+        </div>
+
+        <div class="content">
+          <h1>Wonderful<br><span>Roads</span></h1>
+          <p><h3>Welcome to Wonderful Roads, your ultimate guide to the world's most breathtaking road trips! Whether you're a seasoned traveler or a weekend wanderer, embark on unforgettable journeys through scenic landscapes, charming towns, and hidden gems. Discover the freedom of the open road with curated routes, expert tips, and inspiring stories that will fuel your wanderlust. Your adventure begins here! </h3></p>
+          <a href="">Read More</a>
+      </div>
+
+      <div class="content">
+        <h1>Wonderful<br><span>Woods</span></h1>
+        <p><h3>Welcome to Wonderful Woods, your portal to the world's most enchanting forests and woodlands! Immerse yourself in the serenity and beauty of nature as you explore lush landscapes, ancient trees, and hidden trails. Whether you're seeking adventure or tranquility, our curated guides and tips will help you discover the perfect woodland retreat. Begin your journey into the heart of nature today! </h3></p>
+        <a href="">Read More</a>
+    </div>
+
+    <div class="content">
+      <h1>Wonderful<br><span>Forest</span></h1>
+      <p><h3>Welcome to Wonderful Forests, your gateway to the world's most magnificent woodlands! Dive into the serenity and splendor of nature as you explore dense forests, towering trees, and tranquil trails. Whether you're an adventurer seeking new paths or a nature lover looking for peace, our curated guides and expert tips will lead you to unforgettable forest experiences. Embark on your journey into nature's embrace today! </h3></p>
+      <a href="">Read More</a>
+  </div>
+
+  <div class="content">
+    <h1>Wonderful<br><span>beaches</span></h1>
+    <p><h3>Welcome to Wonderful Beaches, your ultimate destination for discovering the world's most stunning coastlines! From sun-drenched shores to hidden coves, explore pristine sands, crystal-clear waters, and breathtaking sunsets. Whether you're looking to relax, surf, or explore, our comprehensive guides and expert tips will help you find the perfect beach getaway. Dive into your dream beach adventure today!</h3> </p>
+    <a href="">Read More</a>
+</div>
+
+        <div class="media-icons">
+            <a href=""><i class="fab fa-facebook-f"></i></a>
+            <a href=""><i class="fab fa-instagram"></i></a>
+            <a href=""><i class="fab fa-twitter"></i></a>
+        </div>
+
+        <div class="slider-navigation">
+          <div class="nav-btn active"></div>
+          <div class="nav-btn"></div>
+          <div class="nav-btn"></div>
+          <div class="nav-btn"></div>
+          <div class="nav-btn"></div>
+        </div>
+
+
+        <script>
+          //JavaScript for video slider navigation
+          const btns=document.querySelectorAll(".nav-btn");
+          const slides=document.querySelectorAll(".video-slide");
+          const contents=document.querySelectorAll(".content");
+
+          var sliderNav= function(manual){
+            btns.forEach((btn) => {
+              btn.classList.remove("active");
+            });
+
+            slides.forEach((slide) => {
+              slide.classList.remove("active");
+            });
+
+            contents.forEach((content) => {
+              content.classList.remove("active");
+            })
+
+
+            btns[manual].classList.add("active");
+            slides[manual].classList.add("active");
+            contents[manual].classList.add("active");
+          }
+
+          btns.forEach((btn, i) => {
+            btn.addEventListener("click", () => {
+              sliderNav(i)
+            });
+          });
+
+        </script>
+
+    </section>
+
+   
+
+    
+
+
+
+<!-- budget -->
+<section id="popular-destinations">
+  <div class="container">
+      <h2>Filter by <span>Budget</span></h2>
+      <form id="budget-form">
+          <label for="budget">Choose your budget:</label>
+          <select id="budget" name="budget">
+              <option value="all">All</option>
+              <option value="low">Low (0-49000)</option>
+              <option value="medium">Medium (49001-75000)</option>
+              <option value="high">High (75001 and above)</option>
+          </select>
+          <button type="button" id="filter-button">Filter</button>
+      </form>
+  </div>
+
+  <div class="container">
+      <h2>Popular <span>Destinations</span></h2>
+      <div class="destinations-wrapper">
+          <div class="destination" data-price="25000" style="background-image: url('/maldivs.jpg');">
+              <div class="destination-content">
+                  <h3>Maldives</h3>
+                  <p>Experience the serene beauty of the Maldives with its white-sand beaches and crystal-clear waters.</p>
+                  <p class="price">Price: $25000</p>
+              </div>
+          </div>
+          <div class="destination" data-price="80000" style="background-image: url('/italy.jpg');">
+              <div class="destination-content">
+                  <h3>Italy</h3>
+                  <p>Explore the rich history and culture of Italy, from ancient ruins to delicious cuisine.</p>
+                  <p class="price">Price: 80000</p>
+              </div>
+          </div>
+          <div class="destination" data-price="70000" style="background-image: url('/japan.jpg');">
+              <div class="destination-content">
+                  <h3>Japan</h3>
+                  <p>Discover the unique blend of tradition and modernity in Japan, with its stunning landscapes and vibrant cities.</p>
+                  <p class="price">Price: 70000</p>
+              </div>
+          </div>
+          <div class="destination" data-price="30000" style="background-image: url('/andaman.jpg');">
+            <div class="destination-content">
+                <h3>Andaman And Nicobar</h3>
+                <p>Experience the untouched beauty of Andaman and Nicobar Islands, known for their pristine beaches and marine life.</p>
+                <p class="price">Price: 30000</p>
+            </div>
+        </div>
+        <div class="destination" data-price="100000" style="background-image: url('/france.jpg');">
+          <div class="destination-content">
+              <h3>France</h3>
+              <p>Enjoy the romance and elegance of France, from the Eiffel Tower to the vineyards of Bordeaux.</p>
+              <p class="price">Price: 100000</p>
+          </div>
+      </div>
+      <div class="destination" data-price="20000" style="background-image: url('/kashmir.jpg');">
+        <div class="destination-content">
+            <h3>Kashmir</h3>
+            <p>Explore the scenic beauty of Kashmir, with its stunning valleys, lakes, and gardens.</p>
+            <p class="price">Price: 20000</p>
+        </div>
+    </div>
+    <div class="destination" data-price="95000" style="background-image: url('/switzerland.jpg');">
+      <div class="destination-content">
+          <h3>Switzerland</h3>
+          <p>Discover the picturesque landscapes of Switzerland, known for its mountains, lakes, and chocolates.</p>
+          <p class="price">Price: 95000</p>
+      </div>
+  </div>
+          <!-- Add more destinations as needed -->
+      </div>
+  </div>
+</section>
+<!--=======================choose your place===============close-->
+
+<!-- =========booking form=============== -->
+
+<section id="booking">
+  <div class="form-container">
+      <h2>Book Your Destination</h2>
+      <form id="booking-form" method="POST" action="submit_booking.php">
+          <div class="form-group">
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+              <label for="phone">Phone:</label>
+              <input type="tel" id="phone" name="phone" required>
+          </div>
+          <div class="form-group">
+              <label for="destination">Destination:</label>
+              <input type="text" id="destination" name="destination" required>
+          </div>
+          <div class="form-group">
+              <label for="date">Travel Date:</label>
+              <input type="date" id="date" name="date" required>
+          </div>
+          <div class="form-group">
+              <label for="travelers">Number of Travelers:</label>
+              <input type="number" id="travelers" name="travelers" required>
+          </div>
+          <button type="submit">Submit</button>
+      </form>
+  </div>
+</section>
+
+<!-- =============================booking form close================== -->
+
+<section id="contact-about">
+  <div class="container">
+      <div class="section-heading">
+          <h2>Contact Us</h2>
+          <p>Get in touch with us for any inquiries</p>
+      </div>
+      <div class="contact-details">
+          <div class="contact-info">
+              <h3>Contact Details</h3>
+              <p><strong>Email:</strong> contact@example.com</p>
+              <p><strong>Phone:</strong> +1 234 567 890</p>
+              <p><strong>Address:</strong> 123 Street Name, City, Country</p>
+          </div>
+          <div class="reviews">
+              <h3>Customer Reviews</h3>
+              <div class="review">
+                  <p><strong>Rating:</strong> ★★★★★</p>
+                  <p><strong>Review:</strong> "Great experience! Highly recommend."</p>
+                  <p><strong>Reviewer:</strong> John Doe</p>
+              </div>
+              <!-- Add more reviews as needed -->
+          </div>
+      </div>
+      <div class="about-us">
+          <h3>About Us</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam varius turpis et aliquam vehicula. Sed eget felis eu eros tincidunt posuere. Donec nec augue nec nunc rutrum rutrum. Phasellus fermentum, velit a ullamcorper lacinia, arcu est tempor metus, ac iaculis tortor augue ac lectus. Donec auctor dui sit amet maximus volutpat.</p>
+      </div>
+  </div>
+</section>
+
+<!-- Footer Section -->
+<footer>
+  <div class="container">
+      <p>&copy; 2024 Your Website. All rights reserved.</p>
+  </div>
+</footer>
+
+
+
+
+<script src="script.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+</body>
+</html>
